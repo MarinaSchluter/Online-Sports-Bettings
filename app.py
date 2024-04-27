@@ -63,7 +63,7 @@ st.title("Online Sports Betting")
 # st.sidebar.write("-------------")
 
 #-----TABS------#
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["Context","Events Distribution","Wager vs Win","PowerBi","Prediction"])
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["Context","Events Distribution","Wager vs Win","PowerBI","Prediction"])
 
 #-----TAB 1 (CONTEXT)------#
 
