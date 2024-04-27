@@ -22,13 +22,13 @@
 
   A Streamlit application has been created to show some of the results obtained during this project. It can be accessed directly from [Online Sports Betting](https://online-sports-bettings-kbrepywzhd5mjvfpihsmsb.streamlit.app/).    
   
-  This is a multi-tab application where you can browse through different information on each tab. 
-    - Tab & Content:    
-      - Context: This tab provides an overview of the number of Online Sportbetting houses in Spain and their ratings. It has a filter to display them according to the rating of the public.   
-      - Events Distribution: This tab shows the number of events (competitions) on which bets have been placed during the period recorded in the dataset used in the project. 
-      - Wager vs Win: Overview and comparison of the amount bet by the players and the amount earned by the company. By using filters, some more concrete data can be displayed.  
-      - PowerBI: A PowerBI panel with different statistics has been added in this Tab. It can also be consulted [PowerBI](https://app.fabric.microsoft.com/view?r=eyJrIjoiZTIyMjcxNjktZGExMS00MDljLWJmMjYtYzFiZDMzMmZhMDZiIiwidCI6IjhhZWJkZGI2LTM0MTgtNDNhMS1hMjU1LWI5NjQxODZlY2M2NCIsImMiOjl9&pageName=ReportSection). 
-      - Prediction: In this tab you can predict the company's profit by specifying a sport group and the time of purchase of the bet.   
+  This is a multi-tab application where you can browse through different information on each tab.     
+    - Tab & Content:        
+      - Context: This tab provides an overview of the number of Online Sportbetting houses in Spain and their ratings. It has a filter to display them according to the rating of the public.       
+      - Events Distribution: This tab shows the number of events (competitions) on which bets have been placed during the period recorded in the dataset used in the project.     
+      - Wager vs Win: Overview and comparison of the amount bet by the players and the amount earned by the company. By using filters, some more concrete data can be displayed.      
+      - PowerBI: A PowerBI panel with different statistics has been added in this Tab. It can also be consulted [PowerBI](https://app.fabric.microsoft.com/view?r=eyJrIjoiZTIyMjcxNjktZGExMS00MDljLWJmMjYtYzFiZDMzMmZhMDZiIiwidCI6IjhhZWJkZGI2LTM0MTgtNDNhMS1hMjU1LWI5NjQxODZlY2M2NCIsImMiOjl9&pageName=ReportSection).     
+      - Prediction: In this tab you can predict the company's profit by specifying a sport group and the time of purchase of the bet.       
 
  ### **User Guide**
   #### Replicate the application  
