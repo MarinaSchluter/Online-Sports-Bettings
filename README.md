@@ -23,6 +23,8 @@
 
  ### Streamlit App
 
+    A Streamlit application has been created to show some of the results obtained during this project. It can be accessed directly from [Online Sports Betting]()
+
  ### User Guide
 
  ### Main challenges
