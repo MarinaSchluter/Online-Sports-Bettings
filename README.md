@@ -1,6 +1,8 @@
 # Online Sports Bettings
 
-<center> <img src="football-6266_256.gif"></center> <br><br>
+<p align="center">
+  <img src="football-6266_256.gif">
+</p>
 
 <!-- ![alt text](image.png) -->
 <!-- Font:[Klipartz](https://www.klipartz.com/es/sticker-png-ttoqu) -->
