@@ -7,6 +7,38 @@
 <!-- ![alt text](image.png) -->
 <!-- Font:[Klipartz](https://www.klipartz.com/es/sticker-png-ttoqu) -->
 
- This is a project related to Online Sports Betting in Spain where the aim is to obtain a model that predicts the sports sub-modality that brings the most profit to a company given a sample data set. 
+ This is a project related to Online Sports Betting in Spain where the aim is to obtain a model that predicts the sports group that brings the most profit to a company given a sample data set. 
+
+ ## Table of Contents
+
+ 1. [Streamlit App](#Streamlit-App)
+ 2. [User Guide](User-Guide)
+ 3. [Main challenges](Main-challenges)
+ 4. [Files](Files)
+ 4. [Analysis](Analysis)
+ 5. [PowerBI](PowerBI)
+ 4. [Key Results](Key-Results)
+ 5. [Contributing](Contributing)
+
+
+ ### Streamlit App
+
+ ### User Guide
+
+ ### Main challenges
+
+ ### Files
+
+  []()
+  []()
+
+
+ ### Analysis
+
+ ### PowerBI
+
+ ### Key Results
+
+ ### Contributing
 
 
