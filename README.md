@@ -58,8 +58,14 @@ This is a multi-tab application where you can browse through different informati
 
 ### **Files & Main Challenges**
 
-  []()
-  []()
+- [App](app.py)
+- Notebooks:
+  - [Preprocesing & EDA](Notebooks/Data Pre-Processing & EDA.ipynb)
+  - [Data Analysis](Notebooks\Data Analysis Graphs.ipynb)
+  - [Webcrapping](Notebooks\Webscrapping_Betting_Houses.ipynb)
+  - [Regression Model](Notebooks\Regression model, Wager.ipynb)
+- [Data](Data)
+- [Images](Images)
 
 
 ### **Key Results**
