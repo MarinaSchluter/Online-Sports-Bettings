@@ -46,10 +46,10 @@ set_background('Images/footballstadiumtransparent.png', horizontal_offset=100, v
 
 # ---------------------DATAFRAMES-----------------------------#
 
-online_betting_houses=pd.read_csv("Data\online_betting_houses.csv")
-mysportsbetting=pd.read_csv("Data\mysportsbetting.csv")
-mysportsbetting_filtered=pd.read_csv("Data\mysportsbetting_filtered.csv")
-sports_regression=pd.read_csv("Data\sports_regression.csv")
+online_betting_houses=pd.read_csv("Data/online_betting_houses.csv")
+mysportsbetting=pd.read_csv("Data/mysportsbetting.csv")
+mysportsbetting_filtered=pd.read_csv("Data/mysportsbetting_filtered.csv")
+sports_regression=pd.read_csv("Data/sports_regression.csv")
 
 # ---------------------HEADER & LOGO-----------------------------#
 
