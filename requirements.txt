@@ -1,0 +1,24 @@
+# Essential libraries
+pandas
+numpy===1.5.3
+
+# Visualizations
+matplotlib
+seaborn
+plotly-express
+
+# Machine Learning
+scikit-learn
+
+# Web Scraping
+selenium
+beautifulsoup4
+
+# APIs & scripts
+streamlit
+
+
+# Miscellanea
+urllib
+json
+ssl
