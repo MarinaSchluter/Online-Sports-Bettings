@@ -37,7 +37,7 @@
  
   #### Modify application elements 
 
-  ##### ![alt text](streamlit.png)Streamlit Local Host  
+  ##### c:\Users\mayin\Downloads\streamlit.pngStreamlit Local Host  
   - Open the repository in Visual Studio Code.  
   - Open the Terminal by pressing Ctrl+J or from the top right menu.  
   - Type in the Terminal "Streamlit run app.py". If necessary, replace "app.py" with the relative path of the application's main .py file.  
