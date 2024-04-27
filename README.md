@@ -18,7 +18,7 @@
  5. [Contributing](Contributing)
 
 
- ### **Streamlit App**
+ ### ![alt text](streamlit-1.png)**Streamlit App**
 
   A Streamlit application has been created to show some of the results obtained during this project. It can be accessed directly from [Online Sports Betting](https://online-sports-bettings-kbrepywzhd5mjvfpihsmsb.streamlit.app/).    
   
@@ -37,7 +37,7 @@
  
   #### Modify application elements 
 
-  ##### ![alt text](streamlit-1.png)Streamlit Local Host  
+  ##### Streamlit Local Host  
   - Open the repository in Visual Studio Code.  
   - Open the Terminal by pressing Ctrl+J or from the top right menu.  
   - Type in the Terminal "Streamlit run app.py". If necessary, replace "app.py" with the relative path of the application's main .py file.  
