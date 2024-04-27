@@ -10,10 +10,7 @@
 
  1. [Streamlit App](#Streamlit-App)
  2. [User Guide](User-Guide)
- 3. [Main challenges](Main-challenges)
- 4. [Files](Files)
- 4. [Analysis](Analysis)
- 5. [PowerBI](PowerBI)
+ 3. [Files & Main Challenges](Files-&-Main-Challenges)
  4. [Key Results](Key-Results)
  5. [Contributing](Contributing)
 
@@ -24,7 +21,7 @@ A Streamlit application has been created to show some of the results obtained du
   
 This is a multi-tab application where you can browse through different information on each tab.     
   - Tabs & Content:     
-     
+
     - Context: This tab provides an overview of the number of Online Sportbetting houses in Spain and their ratings. It has a filter to display them according to the rating of the public.       
     - Events Distribution: This tab shows the number of events (competitions) on which bets have been placed during the period recorded in the dataset used in the project.     
     - Wager vs Win: Overview and comparison of the amount bet by the players and the amount earned by the company. By using filters, some more concrete data can be displayed.      
@@ -59,19 +56,13 @@ This is a multi-tab application where you can browse through different informati
   - Once the app is visualised in Share Streamlit, you can start applying changes and improvements. Always from the application's .py files.  
   - Whenever you save a change in Visual Studio Code, you will have to refresh Streamlit to be able to see the applied changes. 
 
-### **Main challenges**
-
-### Files
+### **Files & Main Challenges**
 
   []()
   []()
 
 
-### Analysis
-
-### PowerBI
-
-### Key Results
+### **Key Results**
 
 ### **Contributing**
 
