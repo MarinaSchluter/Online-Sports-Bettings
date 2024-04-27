@@ -1,7 +1,7 @@
 # Online Sports Bettings
 
 <p align="center">
-  <img src="soccer-9133_256.gif">
+  <img src="Images\soccer-9133_256.gif">
 </p>
 
 <!-- ![alt text](image.png) -->
