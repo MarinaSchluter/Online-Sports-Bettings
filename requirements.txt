@@ -16,8 +16,3 @@ beautifulsoup4
 
 # APIs & scripts
 streamlit
-
-
-# Miscellanea
-json
-ssl
