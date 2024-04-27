@@ -28,7 +28,7 @@ This is a multi-tab application where you can browse through different informati
     - PowerBI: A PowerBI panel with different statistics has been added in this Tab. It can also be consulted [PowerBI](https://app.fabric.microsoft.com/view?r=eyJrIjoiZTIyMjcxNjktZGExMS00MDljLWJmMjYtYzFiZDMzMmZhMDZiIiwidCI6IjhhZWJkZGI2LTM0MTgtNDNhMS1hMjU1LWI5NjQxODZlY2M2NCIsImMiOjl9&pageName=ReportSection).     
     - Prediction: In this tab you can predict the company's profit by specifying a sport group and the time of purchase of the bet.       
 
-### **User Guide**
+### **📋User Guide**
 
 #### Replicate the application  
 
@@ -56,7 +56,7 @@ This is a multi-tab application where you can browse through different informati
   - Once the app is visualised in Share Streamlit, you can start applying changes and improvements. Always from the application's .py files.  
   - Whenever you save a change in Visual Studio Code, you will have to refresh Streamlit to be able to see the applied changes. 
 
-### **Files & Main Challenges**
+### **🗃️Files & Main Challenges**
 
 - [App](app.py)
 - Notebooks:
@@ -68,7 +68,7 @@ This is a multi-tab application where you can browse through different informati
 - [Images](Images)
 
 
-### **Key Results**
+### **🎯Key Results**
 
 ### **Contributing**
 
