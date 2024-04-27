@@ -1,6 +1,6 @@
 # Essential libraries
 pandas
-numpy===1.5.3
+numpy
 
 # Visualizations
 matplotlib
