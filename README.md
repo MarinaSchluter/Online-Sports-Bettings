@@ -37,24 +37,24 @@
  
   #### Modify application elements 
 
-  ##### Streamlit Local Host  
-  Open the repository in Visual Studio Code.  
-  Open the Terminal by pressing Ctrl+J or from the top right menu.  
-  Type in the Terminal "Streamlit run app.py". If necessary, replace "app.py" with the relative path of the application's main .py file.  
-  Once the app is visualised in Streamlit Local, you can start applying changes and improvements. Always from the application's .py files.  
-  Whenever you save a change in Visual Studio Code, you will have to refresh Streamlit to be able to see the applied changes. 
+  ##### ![alt text](streamlit.png)Streamlit Local Host  
+  - Open the repository in Visual Studio Code.  
+  - Open the Terminal by pressing Ctrl+J or from the top right menu.  
+  - Type in the Terminal "Streamlit run app.py". If necessary, replace "app.py" with the relative path of the application's main .py file.  
+  - Once the app is visualised in Streamlit Local, you can start applying changes and improvements. Always from the application's .py files.  
+  - Whenever you save a change in Visual Studio Code, you will have to refresh Streamlit to be able to see the applied changes. 
 
   ##### Share Streamlit 
 
-  Make a copy of the repository on your GitHub. 
-  Open the repository in Visual Studio Code.  
-  Log in to your Share Streamlit account. 
-  Select "New app". 
-  Choose the repository containing the application. 
-  Click the "Deploy!" button. 
-  Make sure that the versions in the requirements.txt file match the ones you have in your version of Visual Studio Code. If not, update them to avoid errors.  
-  Once the app is visualised in Share Streamlit, you can start applying changes and improvements. Always from the application's .py files.  
-  Whenever you save a change in Visual Studio Code, you will have to refresh Streamlit to be able to see the applied changes. 
+  - Make a copy of the repository on your GitHub. 
+  - Open the repository in Visual Studio Code.  
+  - Log in to your Share Streamlit account. 
+  - Select "New app". 
+  - Choose the repository containing the application. 
+  - Click the "Deploy!" button. 
+  - Make sure that the versions in the requirements.txt file match the ones you have in your version of Visual Studio Code. If not, update them to avoid errors.  
+  - Once the app is visualised in Share Streamlit, you can start applying changes and improvements. Always from the application's .py files.  
+  - Whenever you save a change in Visual Studio Code, you will have to refresh Streamlit to be able to see the applied changes. 
 
  ### **Main challenges**
 
