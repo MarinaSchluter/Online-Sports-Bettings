@@ -63,7 +63,7 @@ st.title("Online Sports Betting")
 # st.sidebar.write("-------------")
 
 #-----TABS------#
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["Context","Events Distribution","Wager vs Win","PowerBI","Prediction"])
+tab1, tab2, tab3, tab4, tab5,tab6 = st.tabs(["Context","Events Distribution","Wager vs Win","Hold","PowerBI","Prediction"])
 
 #-----TAB 1 (CONTEXT)------#
 
@@ -249,18 +249,42 @@ with tab3:
                 labels={"Sport_Group": "Sport Group", "value": "Amount", "variable": "Type"},width=1750,height=400)
     st.plotly_chart(fig)
 
-#-----TAB 4 (POWERBI)------#
+#-----TAB 4 (HOLD)------#
 
 with tab4:
+    col1,col2=st.columns(2)
+    with col1:
+        hold_avg_by_sport_group = (mysportsbetting.groupby("Sport_Group")["Hold"].mean()).round(4)*100
+        fig=px.histogram(hold_avg_by_sport_group,x=hold_avg_by_sport_group.index,y=hold_avg_by_sport_group.values,title="Hold Average by Sports Group",
+                        color=hold_avg_by_sport_group.index,color_discrete_map=color_map_sport_group,text_auto=True)
+        fig.update_traces(texttemplate='%{y:.2f}%', textposition='outside')
+        fig.update_xaxes(title="Sport Group")
+        fig.update_yaxes(title="Hold Average from each Sport Group")
+        st.plotly_chart(fig)  
+    with col2:
+        total_hold = mysportsbetting["Hold"].sum()
+        hold_avg_by_sport_group_relative = (mysportsbetting.groupby("Sport_Group")["Hold"].sum() / total_hold).round(4) * 100
+        fig = px.bar(hold_avg_by_sport_group_relative,x=hold_avg_by_sport_group_relative.index, 
+                    y=hold_avg_by_sport_group_relative.values,color_discrete_map=color_map_sport_group,text_auto=True,
+                    title="Promedio de Hold por Grupo de Deportes (Respecto al Total)")
+        fig.update_traces(texttemplate='%{y:.2f}%', textposition='outside')
+        fig.update_xaxes(title="Sport Group")
+        fig.update_yaxes(title="Hold Average from total Hold")
+        st.plotly_chart(fig)  
+
+
+#-----TAB 5 (POWERBI)------#
+
+with tab5:
     power_bi_url = "https://app.fabric.microsoft.com/view?r=eyJrIjoiZTIyMjcxNjktZGExMS00MDljLWJmMjYtYzFiZDMzMmZhMDZiIiwidCI6IjhhZWJkZGI2LTM0MTgtNDNhMS1hMjU1LWI5NjQxODZlY2M2NCIsImMiOjl9&pageName=ReportSection"
     iframe_width = 2500
     iframe_height = 800
 
     st.markdown(f'<iframe src="{power_bi_url}" width={iframe_width} height={iframe_height} style="position:absolute; left:-300px;"></iframe>', unsafe_allow_html=True)
 
-#-----TAB 5 (PREDICTION)------#
+#-----TAB 6 (PREDICTION)------#
 
-with tab5:
+with tab6:
     
     st.markdown("**Equivalence Tables**:")
     col1,col2,col3=st.columns(3)
