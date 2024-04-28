@@ -106,9 +106,9 @@ This is a multi-tab application where you can browse through different informati
       - Data do not follow a Gaussioan distribution and has a high number of outliers, reasons why "Z-Score", "Min-Max" were discard. Box-Cox was also discard as the robustness of the data is more important in this case than to fit to a normal distribution. 
 
   - Regression Model:     
-    -Different models have been trained: `Support Vector Regression(SVR)`, `Ridge Regression`, `Lasso Regression`, `ElasticNet Regression`, `Random Forest Regression`, `Gradient Boosting Regression` and `Polynomial Regression`.   
-    -Train was applied to data with normalization applied and outliers removed (mysportsbettings_filtered) but also without this changes (mysportsbetting).   
-    -Better model results come from `Random Forest Regression` applied to data with normalisation and without outliers.   
+    - Different models have been trained: `Support Vector Regression(SVR)`, `Ridge Regression`, `Lasso Regression`, `ElasticNet Regression`, `Random Forest Regression`, `Gradient Boosting Regression` and `Polynomial Regression`.   
+    - Train was applied to data with normalization applied and outliers removed (mysportsbettings_filtered) but also without this changes (mysportsbetting).   
+    - Better model results come from `Random Forest Regression` applied to data with normalisation and without outliers.   
     ![alt text](image-3.png)     
     ![alt text](image-4.png)  
     - Although Random Forest Regression is the best of the models we tested, it still has a very high MSE and, when compared to real data, we found that it is not a good prediction model. The margin of error is very high. 
