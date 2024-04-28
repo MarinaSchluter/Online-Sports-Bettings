@@ -281,9 +281,9 @@ with tab5:
     ssl._create_default_https_context = ssl._create_stdlib_context
 
 
-    API_KEY = 'Fdnddx2a9dv4slCnb1Sd6RMSIlUqRkSd'
+    API_KEY = '6lvhYcEDrhQ7DdyN8XSfWjH2QrbLX2jU'
 
-    URL = 'https://marina-zzkge.francecentral.inference.ml.azure.com/score'
+    URL = 'https://marina-mpxpr.francecentral.inference.ml.azure.com/score'
 
     Purchase_Time_encoded, Sport_Group_encoded, Wager = st.columns(3)
     with Purchase_Time_encoded:
