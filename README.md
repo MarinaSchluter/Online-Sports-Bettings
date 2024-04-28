@@ -61,7 +61,7 @@ This is a multi-tab application where you can browse through different informati
 
 - [App](app.py)
   - Creation of an app with different tabs that reflect different statics, results and contain a prdiction model.
-- [Notebooks](Notebooks\Webscrapping_Betting_Houses.ipynb)
+- [Notebooks](Notebooks/Webscrapping_Betting_Houses.ipynb)
   - [Webscrapping](Notebooks\Webscrapping_Betting_Houses.ipynb)
     - Obtaining updated data on the different Spanish Betting Houses and their valuation. 
   - [Preprocesing & EDA](Notebooks\Data_Pre-Processing_&_EDA.ipynb)
