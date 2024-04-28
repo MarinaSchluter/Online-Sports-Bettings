@@ -131,7 +131,7 @@ This is a multi-tab application where you can browse through different informati
 
  
 ### **🎯Key Results**
-  - Our dataset contains wager amounts by event (competitions). Don't include bets by user so our conclusions will always be around events. 
+  - Our dataset contains wager amounts by event. Don't include bets by user so our conclusions will always be around events. 
   - The strongest correlation is the negative (inverse) correlation between "Paid" and "Hold" (-0.97). The more you pay, the less the company earns.
   - Sports betting has a great variability in the amounts wagered. They depend on factors such as the sport, the specific event or the players themselves. In terms of events and sports, some are more popular than others, in general, but as far as players are concerned, there is no rule that marks the level of their bets.
   - The most popular sport and the one who provides a major profit is football.
