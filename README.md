@@ -61,10 +61,10 @@ This is a multi-tab application where you can browse through different informati
 
 - [App](app.py)
   - Creation of an app with different tabs that reflect different statics, results and contain a prdiction model.
-- [Notebooks](Notebooks/Webscrapping_Betting_Houses.ipynb)
-  - [Webscrapping](Notebooks\Webscrapping_Betting_Houses.ipynb)
+- [Notebooks](Notebooks)
+  - [Webscrapping](Notebooks/Webscrapping_Betting_Houses.ipynb)
     - Obtaining updated data on the different Spanish Betting Houses and their valuation. 
-  - [Preprocesing & EDA](Notebooks\Data_Pre-Processing_&_EDA.ipynb)
+  - [Preprocesing & EDA](Notebooks/Data_Pre-Processing_&_EDA.ipynb)
     - Uploading dataset and querying its attributes.
     - Study of the different variables.
     - Testing normality.
@@ -74,11 +74,11 @@ This is a multi-tab application where you can browse through different informati
     - Normalisation.
     - Outliers detection & treatment.
     - Creation of new cvs for analysis and Machine Learning purposes.
-  - [Data Analysis](Notebooks\Data_Analysis_Graphs.ipynb)
+  - [Data Analysis](Notebooks/Data_Analysis_Graphs.ipynb)
     - Events Distribution by different variables.
     - Wager Distribution by different variables.
     - Win Distribution by different variables.
-  - [Regression Model](Notebooks\Regression_model_Winnings.ipynb)
+  - [Regression Model](Notebooks/Regression_model_Winnings.ipynb)
 - [Requirements](requirements.txt)
 - [Data](Data)
   - Contains the different cvs used on present proyect and a copy of them on excel. 
