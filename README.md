@@ -25,7 +25,8 @@ This is a multi-tab application where you can browse through different informati
 
     - Context: This tab provides an overview of the number of Online Sportbetting houses in Spain and their ratings. It has a filter to display them according to the rating of the public.       
     - Events Distribution: This tab shows the number of events (competitions) on which bets have been placed during the period recorded in the dataset used in the project.     
-    - Wager vs Win: Overview and comparison of the amount bet by the players and the amount earned by the company. By using filters, some more concrete data can be displayed.      
+    - Wager vs Win: Overview and comparison of the amount bet by the players and the amount earned by the company. By using filters, some more concrete data can be displayed.     
+    - Hold: Overview about Hold distribution by Sport Group and Purchase Time. 
     - PowerBI: A PowerBI panel with different statistics has been added in this Tab. It can also be consulted [PowerBI](https://app.fabric.microsoft.com/view?r=eyJrIjoiZTIyMjcxNjktZGExMS00MDljLWJmMjYtYzFiZDMzMmZhMDZiIiwidCI6IjhhZWJkZGI2LTM0MTgtNDNhMS1hMjU1LWI5NjQxODZlY2M2NCIsImMiOjl9&pageName=ReportSection).     
     - Prediction: In this tab you can predict the company's profit by specifying a sport group and the time of purchase of the bet.       
 
@@ -136,6 +137,8 @@ This is a multi-tab application where you can browse through different informati
   - Sports betting has a great variability in the amounts wagered. They depend on factors such as the sport, the specific event or the players themselves. In terms of events and sports, some are more popular than others, in general, but as far as players are concerned, there is no rule that marks the level of their bets.
   - The most popular sport and the one who provides a major profit is football.
   - Football competitions are the ones that generate the most money for the company, but they are also the ones in which users are paid the most money. 
+  - Even if footbal has a hold of 19.59% , when comparing with other Sport Groups and the total Hold, still represents the 52,86% of the total Hold. Bigger volume on football explains this. 
+  - As before shown with football, Prematch has a hold of 19,60%, lower than the Hold from Live purchase, but, Prematch represents the 50,83% of the total Hold. This is due to a bigger volume on Prematch purchasing.
 
 ### **Contributing**
 
