@@ -107,16 +107,24 @@ This is a multi-tab application where you can browse through different informati
 
   - Regression Model:     
     -Different models have been trained: `Support Vector Regression(SVR)`, `Ridge Regression`, `Lasso Regression`, `ElasticNet Regression`, `Random Forest Regression`, `Gradient Boosting Regression` and `Polynomial Regression`.   
-    -Train was applied to data with normalization applied and outliers removed (mysportbettings_filtered) but also without this changes (mysportbetting).   
+    -Train was applied to data with normalization applied and outliers removed (mysportsbettings_filtered) but also without this changes (mysportsbetting).   
     -Better model results come from `Random Forest Regression` applied to data with normalisation and without outliers.   
     ![alt text](image-3.png)     
     ![alt text](image-4.png)  
-    - 
+    - Although Random Forest Regression is the best of the models we tested, it still has a very high MSE and, when compared to real data, we found that it is not a good prediction model. The margin of error is very high. 
+    - Finally, Azure Automated ML has been used to get a better model. 
+    - After train models with mysportsbetting and mysportsbetting_filtered, best results comes with mysportsbetting_filtered (data normalizated and part of the outliers removed).
+    - `green_holiday_tlwygl89` model, as is the one that offers the best predictions and the one used to make predictions. 
+    ![image.png](attachment:image.png)  
+    ![image.png](attachment:image.png)  
+
  
 ### **🎯Key Results**
   - Our dataset contains wager amounts by event (competitions). Don't include bets by user so our conclusions will always be around events. 
   - The strongest correlation is the negative (inverse) correlation between "Paid" and "Hold" (-0.97). The more you pay, the less the company earns.
-  - Sports betting has a great variability in the amounts wagered. They depend on factors such as the sport, the specific event or the players themselves. In terms of events and sports, some are more popular than others, in general, but as far as players are concerned, there is no rule that marks the the level of their bets.
+  - Sports betting has a great variability in the amounts wagered. They depend on factors such as the sport, the specific event or the players themselves. In terms of events and sports, some are more popular than others, in general, but as far as players are concerned, there is no rule that marks the level of their bets.
+  - The most popular sport and the one who provides a major profit is football.
+  - Football competitions are the ones that generate the most money for the company, but they are also the ones in which users are paid the most money. 
 
 ### **Contributing**
 
