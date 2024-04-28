@@ -62,6 +62,8 @@ This is a multi-tab application where you can browse through different informati
 - [App](app.py)
   - Creation of an app with different tabs that reflect different statics, results and contain a prdiction model.
 - [Notebooks](Notebooks)
+  - [Webscrapping](Notebooks\Webscrapping_Betting_Houses.ipynb)
+    - Obtaining updated data on the different Spanish Betting Houses and their valuation. 
   - [Preprocesing & EDA](Notebooks\Data_Pre-Processing_&_EDA.ipynb)
     - Uploading dataset and querying its attributes.
     - Study of the different variables.
@@ -76,8 +78,6 @@ This is a multi-tab application where you can browse through different informati
     - Events Distribution by different variables.
     - Wager Distribution by different variables.
     - Win Distribution by different variables.
-  - [Webscrapping](Notebooks\Webscrapping_Betting_Houses.ipynb)
-    - Obtaining updated data on the different Spanish Betting Houses and their valuation. 
   - [Regression Model](Notebooks\Regression_model_Winnings.ipynb)
 - [Requirements](requirements.txt)
 - [Data](Data)
@@ -90,13 +90,27 @@ This is a multi-tab application where you can browse through different informati
   - Webscrapping: 
     - To access any Spanish site related to gambling, it is necessary to confirm that you are over 18 years of age.
     - It was necessary to automate the web browser using a webdriver to locate the age botton and provide waiting time to click as "yes" in order to acces the information. 
-    - **`Selenium`** was used to this purpose. 
-  - Outliers
-  - Normalisation  
-  - Correlation
-  - Regression Model
+    - `Selenium` was used to this purpose. 
+  - Preprocesing & EDA:
+    - Correlation 
+      - As the variables do not follow a Gaussian distribution, Spearman or Kendall provide better data than Pearson. In this project, `Spearman` was used.
+      - `Label encode` was used to codify object variables and to observe the possible correlations between numerical and object variables. 
+    - Outliers
+      - Were calculated using `IQR` and the number extracted was very high.
+      - Outliers were summed per line based on the numeral variables identified as outliers and, were all 4 numerical variables were identified as outlier, were removed. In this case, 4.71% of the entries were removed.
+      ![alt text](image.png)
+    - Normalisation 
+      - Before removing Outliers, normalisation was applied with `RobustScaler`.
+      - Data do not follow a Gaussioan distribution and has a high number of outliers, reasons why "Z-Score", "Min-Max" were discard. Box-Cox was also discard as the robustness of the data is more important in this case than to fit to a normal distribution.
+    - Regression Model
+      -Different models have been trained: `Support Vector Regression(SVR)`, `Ridge Regression`, `Lasso Regression`, `ElasticNet Regression`, `Random Forest Regression`, `Gradient Boosting Regression` and `Polynomial Regression`.
+      -Train was applied to data with normalization applied and outliers removed but also without this changes.
+      -Better model results come from `Random Forest Regression` applied to data with normalisation and without outliers.
 
 ### **🎯Key Results**
+  - Our dataset contains wager amounts by event (competitions). Don't include bets by user so our conclusions will always be around events. 
+  - The strongest correlation is the negative (inverse) correlation between "Paid" and "Hold" (-0.97). The more you pay, the less the company earns.
+  - Sports betting has a great variability in the amounts wagered. They depend on factors such as the sport, the specific event or the players themselves. In terms of events and sports, some are more popular than others, in general, but as far as players are concerned, there is no rule that marks the the level of their bets.
 
 ### **Contributing**
 
