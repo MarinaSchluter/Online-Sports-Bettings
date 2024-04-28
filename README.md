@@ -90,7 +90,7 @@ This is a multi-tab application where you can browse through different informati
   - Webscrapping: 
     - To access any Spanish site related to gambling, it is necessary to confirm that you are over 18 years of age.
     - It was necessary to automate the web browser using a webdriver to locate the age botton and provide waiting time to click as "yes" in order to acces the information. 
-    - `**Selenium**` was used to this purpose. 
+    - **`Selenium`** was used to this purpose. 
   - Outliers
   - Normalisation  
   - Correlation
