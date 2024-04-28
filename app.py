@@ -255,40 +255,39 @@ with tab4:
     col1,col2=st.columns(2)
     with col1:
         hold_avg_by_sport_group = (mysportsbetting.groupby("Sport_Group")["Hold"].mean()).round(4)*100
-        fig=px.histogram(hold_avg_by_sport_group,x=hold_avg_by_sport_group.index,y=hold_avg_by_sport_group.values,title="Hold Average by Sports Group",
-                        color=hold_avg_by_sport_group.index,color_discrete_map=color_map_sport_group,text_auto=True)
-        fig.update_traces(texttemplate='%{y:.2f}%', textposition='outside')
-        fig.update_xaxes(title="Sport Group")
-        fig.update_yaxes(title="Average Hold of each Sport Group")
+        fig = px.pie(hold_avg_by_sport_group, values=hold_avg_by_sport_group.values,
+                    names=hold_avg_by_sport_group.index,title="Average Hold of each kind of Sport Group", hole=0.3)
+        fig.update_traces(textinfo='percent+label')
         st.plotly_chart(fig)  
+        
     with col2:
         total_hold = mysportsbetting["Hold"].sum()
-        hold_avg_by_sport_group_relative = (mysportsbetting.groupby("Sport_Group")["Hold"].sum() / total_hold).round(4) * 100
-        fig = px.bar(hold_avg_by_sport_group_relative,x=hold_avg_by_sport_group_relative.index, 
-                    y=hold_avg_by_sport_group_relative.values, color=hold_avg_by_sport_group_relative.index, color_discrete_map=color_map_sport_group,text_auto=True,
-                    title="Avergae Hold of each Sport Group respect to the total Hold")
-        fig.update_traces(texttemplate='%{y:.2f}%', textposition='outside')
-        fig.update_xaxes(title="Sport Group")
-        fig.update_yaxes(title="Hold Average from total Hold")
+        hold_avg_by_sport_group_relative = (mysportsbetting.groupby("Sport_Group")["Hold"].sum() / total_hold).round(4)*100
+        fig = px.pie(hold_avg_by_sport_group_relative, values=hold_avg_by_sport_group_relative.values,
+             names=hold_avg_by_sport_group_relative.index,title="Average Hold from the total Hold by Sport Group",
+             hole=0.3)
+        fig.update_traces(textinfo='percent+label')
         st.plotly_chart(fig)  
         
     col1,col2=st.columns(2)
     with col1:
         hold_avg_by_purchase_time = (mysportsbetting.groupby("Purchase_Time")["Hold"].mean()).round(4)*100
-        fig=px.histogram(hold_avg_by_purchase_time,x=hold_avg_by_purchase_time.index,y=hold_avg_by_purchase_time.values,title="Hold Average by Purchase Time",
-                        color=hold_avg_by_purchase_time.index,color_discrete_map=color_map_purchase_time,text_auto=True)
-        fig.update_traces(texttemplate='%{y:.2f}%', textposition='outside')
-        fig.update_xaxes(title="Purchase Time")
-        fig.update_yaxes(title="Average Hold of each Purchase Time")
+        fig = px.pie(hold_avg_by_purchase_time, values=hold_avg_by_purchase_time.values, names=hold_avg_by_purchase_time.index,
+             title="Average Hold of each kind of Purchase Time",hole=0.3)
+        fig.update_traces(textinfo='percent+label')                     
         st.plotly_chart(fig)  
     with col2:
-        hold_avg_by_purchase_time_relative = (mysportsbetting.groupby("Purchase_Time")["Hold"].sum() / total_hold).round(4) * 100
-        fig = px.bar(hold_avg_by_purchase_time_relative,x=hold_avg_by_purchase_time_relative.index, 
-                    y=hold_avg_by_purchase_time_relative.values, color=hold_avg_by_purchase_time_relative.index, color_discrete_map=color_map_purchase_time,text_auto=True,
-                    title="Avergae Hold of each Pruchase Time respect to the total Hold")
-        fig.update_traces(texttemplate='%{y:.2f}%', textposition='outside')
-        fig.update_xaxes(title="Purchase Time")
-        fig.update_yaxes(title="Hold Average from total Hold")
+        # hold_avg_by_purchase_time_relative = (mysportsbetting.groupby("Purchase_Time")["Hold"].sum() / total_hold).round(4) * 100
+        # fig = px.bar(hold_avg_by_purchase_time_relative,x=hold_avg_by_purchase_time_relative.index, 
+        #             y=hold_avg_by_purchase_time_relative.values, color=hold_avg_by_purchase_time_relative.index, color_discrete_map=color_map_purchase_time,text_auto=True,
+        #             title="Avergae Hold of each Pruchase Time respect to the total Hold")
+        # fig.update_traces(texttemplate='%{y:.2f}%', textposition='outside')
+        # fig.update_xaxes(title="Purchase Time")
+        # fig.update_yaxes(title="Hold Average from total Hold")
+        hold_avg_by_purchase_time_relative = (mysportsbetting.groupby("Purchase_Time")["Hold"].sum() / total_hold).round(4)*100
+        fig = px.pie(hold_avg_by_purchase_time_relative, values=hold_avg_by_purchase_time_relative.values,
+             names=hold_avg_by_purchase_time_relative.index, title="Avergae Hold of each Pruchase Time respect to the total Hold",hole=0.3)
+        fig.update_traces(textinfo='percent+label')
         st.plotly_chart(fig)  
 
 
