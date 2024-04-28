@@ -115,8 +115,9 @@ This is a multi-tab application where you can browse through different informati
     - Finally, Azure Automated ML has been used to get a better model. 
     - After train models with mysportsbetting and mysportsbetting_filtered, best results comes with mysportsbetting_filtered (data normalizated and part of the outliers removed).
     - `green_holiday_tlwygl89` model, as is the one that offers the best predictions and the one used to make predictions. 
-    ![image.png](attachment:image.png)  
-    ![image.png](attachment:image.png)  
+<p align="center">
+  <img src="Images\image-5.png">
+</p>   
 
  
 ### **🎯Key Results**
