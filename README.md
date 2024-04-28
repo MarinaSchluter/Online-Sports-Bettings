@@ -60,7 +60,7 @@ This is a multi-tab application where you can browse through different informati
 ### **🗃️Files & Description**
 
 - [App](app.py)
-  -Creation of an app with different tabs that reflect different statics, results and contain a prdiction model.
+  - Creation of an app with different tabs that reflect different statics, results and contain a prdiction model.
 - [Notebooks](Notebooks)
   - [Preprocesing & EDA](Notebooks\Data_Pre-Processing_&_EDA.ipynb)
     - Uploading dataset and querying its attributes.
@@ -68,7 +68,7 @@ This is a multi-tab application where you can browse through different informati
     - Testing normality.
     - Creation of new columns for further study.
     - Null values detection & treatment.
-    - Correlation.
+    - Correlation studies and tests.
     - Normalisation.
     - Outliers detection & treatment.
     - Creation of new cvs for analysis and Machine Learning purposes.
@@ -90,7 +90,7 @@ This is a multi-tab application where you can browse through different informati
   - Webscrapping: 
     - To access any Spanish site related to gambling, it is necessary to confirm that you are over 18 years of age.
     - It was necessary to automate the web browser using a webdriver to locate the age botton and provide waiting time to click as "yes" in order to acces the information. 
-    - **Selenium** was used to this purpose. 
+    - `**Selenium**` was used to this purpose. 
   - Outliers
   - Normalisation  
   - Correlation
