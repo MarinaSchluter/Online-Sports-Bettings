@@ -99,7 +99,10 @@ This is a multi-tab application where you can browse through different informati
       - Were calculated using `IQR` and the number extracted was very high.
       - Outliers were summed per line based on the numeral variables identified as outliers and, were all 4 numerical variables were identified as outlier, were removed. In this case, 4.71% of the entries were removed.    
 
-      ![alt text](image.png)
+<p align="center">
+  <img src="Images\image.png">
+</p>   
+
 
     - Normalisation 
       - Before removing Outliers, normalisation was applied with `RobustScaler`.
@@ -109,14 +112,21 @@ This is a multi-tab application where you can browse through different informati
     - Different models have been trained: `Support Vector Regression(SVR)`, `Ridge Regression`, `Lasso Regression`, `ElasticNet Regression`, `Random Forest Regression`, `Gradient Boosting Regression` and `Polynomial Regression`.   
     - Train was applied to data with normalization applied and outliers removed (mysportsbettings_filtered) but also without this changes (mysportsbetting).   
     - Better model results come from `Random Forest Regression` applied to data with normalisation and without outliers.   
-    ![alt text](image-3.png)     
-    ![alt text](image-4.png)  
+<p align="center">
+  <img src="Images\image-3.png">
+</p>   
+<p align="center">
+  <img src="Images\image-4.png">
+</p>   
     - Although Random Forest Regression is the best of the models we tested, it still has a very high MSE and, when compared to real data, we found that it is not a good prediction model. The margin of error is very high. 
     - Finally, Azure Automated ML has been used to get a better model. 
     - After train models with mysportsbetting and mysportsbetting_filtered, best results comes with mysportsbetting_filtered (data normalizated and part of the outliers removed).
     - `green_holiday_tlwygl89` model, as is the one that offers the best predictions and the one used to make predictions. 
 <p align="center">
-  <img src="Images\image-5.png">
+  <img src="Images\greenmodel-5.png">
+</p>   
+<p align="center">
+  <img src="Images\greenmodelhow.png">
 </p>   
 
  
