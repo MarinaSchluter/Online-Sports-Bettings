@@ -4,11 +4,10 @@ import streamlit as st
 import pandas as pd
 import base64
 import plotly.express as px
-
 import urllib.request
 import json
-import os
 import ssl
+import locale
 
 
 # -----------------SITE CONFIGURATION----------------#
@@ -63,7 +62,7 @@ st.title("Online Sports Betting")
 # st.sidebar.write("-------------")
 
 #-----TABS------#
-tab1, tab2, tab3, tab4, tab5,tab6 = st.tabs(["Context","Events Distribution","Wager vs Win","Hold","PowerBI","Prediction"])
+tab1, tab2, tab3, tab4, tab5,tab6 = st.tabs(["Online Sport Betting Houses in Spain","Events Distribution","Wager vs Win","Hold","PowerBI","Prediction"])
 
 #-----TAB 1 (CONTEXT)------#
 
@@ -113,14 +112,43 @@ with tab2:
         weekday = st.multiselect("Select Weekday:", WEEKDAY_OPTIONS)
         if weekday:
             mysportsbetting=mysportsbetting[mysportsbetting["Day_of_Week_Name"].isin(weekday)]
+            
+    col1,col2,col3,col4,col5=st.columns(5)
+    with col1:
+        COMPETION_OPTIONS=sorted(mysportsbetting["Competition"].unique())
+        sportg= st.multiselect("Select Competition:",COMPETION_OPTIONS)
+        if sportg:
+            mysportsbetting=mysportsbetting[mysportsbetting["Competition"].isin(sportg)]
+    with col2:
+        EVENT_OPTIONS=sorted(mysportsbetting["Event"].unique())
+        purchase = st.multiselect("Select Event:", EVENT_OPTIONS)
+        if purchase:
+            mysportsbetting=mysportsbetting[mysportsbetting["Event"].isin(purchase)]   
+    with col3:
+        st.markdown("")
+    with col4:
+        st.markdown("")
+    with col5:
+        st.markdown("")
+   
+             
+    total_events = len(mysportsbetting)
+    total_events_formatted = locale.format_string("%d", total_events, grouping=True)
+    # total_events_by_filters= mysportsbetting["Event"].nunique()
+    # total_events_by_filters_formatted = locale.format_string("%d", total_events_by_filters, grouping=True)
         
-    competitions_by_date = mysportsbetting.groupby("Event_Date")["Competition"].count().reset_index()
-    fig = px.line(competitions_by_date, x="Event_Date", y="Competition", title="Total Competitions by Event Date",width=1750,height=300 )
-    fig.update_xaxes(title="Date")
-    fig.update_yaxes(title="Number of Events")
-    st.plotly_chart(fig)
-    
-    col1,col2=st.columns(2)
+    col1,col2,col3,col4,col5=st.columns(5)
+    with col1:
+        st.markdown(f"**Total Events: {total_events_formatted}**")
+    with col2:
+        st.markdown(f"")
+    with col3:
+        st.markdown(f"")
+    with col4:
+        st.markdown(f"")
+    with col5:
+        st.markdown(f"")
+        
     color_map_sport_group = {                                        #Create a color map representative of each Sport_Group for quick association and visualisation of elements
     "Football": "darkgreen",
     "Basketball": "red",
@@ -159,6 +187,23 @@ with tab2:
     "Beach Volleyball": "lightyellow",
     "Waterpolo": "dodgerblue"
 }
+    competitions_by_date = mysportsbetting.groupby("Event_Date")["Competition"].count().reset_index()
+    fig = px.line(competitions_by_date, x="Event_Date", y="Competition", title="Total Competitions by Event Date",width=1750,height=300 )
+    fig.update_xaxes(title="Date")
+    fig.update_yaxes(title="Number of Events")
+    st.plotly_chart(fig)
+    
+    
+    # tree_data = mysportsbetting.groupby(["Sport_Group","Sport","Competition","Event"]).size().reset_index(name="count")
+    # fig = px.treemap(tree_data, path=["Sport_Group","Sport","Competition","Event"], 
+    #               values="count", title="Data hierarchy", color="Sport_Group", 
+    #               color_discrete_map=color_map_sport_group, width=1750,height=600)
+    # st.plotly_chart(fig)
+    hierarchy="Images\data_hierarchy.png"
+    st.image(hierarchy)
+    
+    
+    col1,col2=st.columns(2)
     with col1:
             fig=px.histogram(mysportsbetting, x="Sport_Group", title="Event Distribution by Sport Group", 
                              color="Sport_Group",color_discrete_map=color_map_sport_group,text_auto=True,
@@ -234,6 +279,25 @@ with tab3:
         if genderc:
             mysportsbetting=mysportsbetting[mysportsbetting["Gender_Competition"].isin(genderc)]
             
+    total_wager = mysportsbetting["Wager"].sum().astype(int)
+    total_winnings = mysportsbetting["Winnings"].sum().astype(int)
+    # hold = ((total_winnings*100)/total_wager).round(2)
+    
+    locale.setlocale(locale.LC_ALL, '')
+    total_wager_formatted = locale.format_string("%d", total_wager, grouping=True)
+    total_winnings_formatted = locale.format_string("%d", total_winnings, grouping=True)
+    col1,col2,col3,col4,col5=st.columns(5)
+    with col1:
+        st.markdown(f"**Total wager: {total_wager_formatted}€**")
+    with col2:
+        st.markdown(f"**Total Win: {total_winnings_formatted}€**")
+    with col3:
+        st.markdown(f"")
+    with col4:
+        st.markdown(f"")
+    with col5:
+        st.markdown(f"")
+        
     data_by_date = mysportsbetting.groupby("Event_Date").agg({"Wager": "sum", "Winnings": "sum"}).reset_index()
     fig = px.line(data_by_date, x="Event_Date", y=["Wager", "Winnings"], title="Evolution of Wager and Winnings by Date",
                 labels={"Event_Date": "Date", "value": "Amount", "variable": "Type"},width=1750,height=400)
@@ -255,9 +319,11 @@ with tab4:
     col1,col2=st.columns(2)
     with col1:
         hold_avg_by_sport_group = (mysportsbetting.groupby("Sport_Group")["Hold"].mean()).round(4)*100
-        fig = px.pie(hold_avg_by_sport_group, values=hold_avg_by_sport_group.values,
-                    names=hold_avg_by_sport_group.index,title="Average Hold of each kind of Sport Group", hole=0.3)
-        fig.update_traces(textinfo='percent+label')
+        fig=px.histogram(hold_avg_by_sport_group,x=hold_avg_by_sport_group.index,y=hold_avg_by_sport_group.values,title="Hold Average of each Sports Group",
+                        template="plotly_dark",color=hold_avg_by_sport_group.index,color_discrete_map=color_map_sport_group,text_auto=True)
+        fig.update_traces(texttemplate='%{y:.2f}%', textposition='outside')
+        fig.update_xaxes(title="Sport Group")
+        fig.update_yaxes(title="Hold")
         st.plotly_chart(fig)  
         
     with col2:
@@ -265,16 +331,18 @@ with tab4:
         hold_avg_by_sport_group_relative = (mysportsbetting.groupby("Sport_Group")["Hold"].sum() / total_hold).round(4)*100
         fig = px.pie(hold_avg_by_sport_group_relative, values=hold_avg_by_sport_group_relative.values,
              names=hold_avg_by_sport_group_relative.index,title="Average Hold from the total Hold by Sport Group",
-             hole=0.3)
+             hole=0.3, color=hold_avg_by_sport_group_relative.index,color_discrete_map=color_map_sport_group)
         fig.update_traces(textinfo='percent+label')
         st.plotly_chart(fig)  
         
     col1,col2=st.columns(2)
     with col1:
         hold_avg_by_purchase_time = (mysportsbetting.groupby("Purchase_Time")["Hold"].mean()).round(4)*100
-        fig = px.pie(hold_avg_by_purchase_time, values=hold_avg_by_purchase_time.values, names=hold_avg_by_purchase_time.index,
-             title="Average Hold of each kind of Purchase Time",hole=0.3)
-        fig.update_traces(textinfo='percent+label')                     
+        fig=px.histogram(hold_avg_by_purchase_time,x=hold_avg_by_purchase_time.index,y=hold_avg_by_purchase_time.values,title="Hold Average of each Purchase Time",
+                        color=hold_avg_by_purchase_time.index,color_discrete_map=color_map_purchase_time,text_auto=True)
+        fig.update_traces(texttemplate='%{y:.2f}%', textposition='outside')
+        fig.update_xaxes(title="Purchase Time")
+        fig.update_yaxes(title="Hold")                 
         st.plotly_chart(fig)  
     with col2:
         # hold_avg_by_purchase_time_relative = (mysportsbetting.groupby("Purchase_Time")["Hold"].sum() / total_hold).round(4) * 100
@@ -286,7 +354,8 @@ with tab4:
         # fig.update_yaxes(title="Hold Average from total Hold")
         hold_avg_by_purchase_time_relative = (mysportsbetting.groupby("Purchase_Time")["Hold"].sum() / total_hold).round(4)*100
         fig = px.pie(hold_avg_by_purchase_time_relative, values=hold_avg_by_purchase_time_relative.values,
-             names=hold_avg_by_purchase_time_relative.index, title="Avergae Hold of each Pruchase Time respect to the total Hold",hole=0.3)
+                    color=hold_avg_by_purchase_time.index,color_discrete_map=color_map_purchase_time,
+                    names=hold_avg_by_purchase_time_relative.index, title="Avergae Hold of each Pruchase Time respect to the total Hold",hole=0.3)
         fig.update_traces(textinfo='percent+label')
         st.plotly_chart(fig)  
 
