@@ -62,7 +62,7 @@ st.title("Online Sports Betting")
 # st.sidebar.write("-------------")
 
 #-----TABS------#
-tab1, tab2, tab3, tab4, tab5,tab6 = st.tabs(["Online Sports Betting Houses in Spain","Events Distribution","Wager vs Win","Hold","PowerBI","Prediction"])
+tab1, tab2, tab3, tab4, tab5,tab6,tab7 = st.tabs(["Online Sports Betting Houses in Spain","Events Distribution","Wager vs Win","Hold","PowerBI","Prediction","Key Results"])
 
 #-----TAB 1 (CONTEXT)------#
 
@@ -442,3 +442,16 @@ with tab6:
             st.error(f"Application error: {error.code}")
             st.write(error.info())
             st.write(error.read().decode("utf8", 'ignore'))    
+
+#-----TAB 7 (KEY RESULTS)------#
+
+with tab7:
+    st.markdown("- Our dataset contains wager amounts by event. Don't include bets by user so our conclusions will always be around events.")
+    st.markdown("- Our dataset contains wager amounts by event. Don't include bets by user so our conclusions will always be around events.")
+    st.markdown("- Sports betting has a great variability in the amounts wagered. They depend on factors such as the sport, the specific event or the players themselves. In terms of events and sports, some are more popular than others, in general, but as far as players are concerned, there is no rule that marks the level of their bets.")
+    st.markdown("- The most popular sport and the one who provides a major profit is football.")
+    st.markdown("- Football competitions are the ones that generate the most money for the company, but they are also the ones in which users are paid the most money.")
+    st.markdown("- Even if footbal has a hold of 19.59% , this 19.59\% represents the 52,86\% of the total Hold. Bigger volume on football explains it.")
+    st.markdown("- As before shown with football, Prematch has a hold of 19,60\%, lower than the Hold from Live purchase, but, Prematch represents the 50,83\% of the total Hold. Prematch purchasing bigger volume explain it.")
+    st.markdown("- Win prediction will be more usefull if data was higher but selected model reflects real data related to trained data.")
+    st.markdown("- Other predictions as Wager by Sport Group or by Sport could be build as a firts step to help win prediction.")
