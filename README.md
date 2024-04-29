@@ -75,7 +75,7 @@ This is a multi-tab application where you can browse through different informati
     - Normalisation.
     - Outliers detection & treatment.
     - Creation of new cvs for analysis and Machine Learning purposes.
-  - [Data Analysis](Notebooks/Data_Analysis_Graphs.ipynb)
+  - [Data Analysis Graphs](Notebooks/Data_Analysis_Graphs.ipynb)
     - Events Distribution by different variables.
     - Wager Distribution by different variables.
     - Win Distribution by different variables.
