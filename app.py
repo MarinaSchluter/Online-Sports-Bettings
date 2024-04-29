@@ -446,12 +446,90 @@ with tab6:
 #-----TAB 7 (KEY RESULTS)------#
 
 with tab7:
-    st.markdown("- Our dataset contains wager amounts by event. Don't include bets by user so our conclusions will always be around events.")
-    st.markdown("- Our dataset contains wager amounts by event. Don't include bets by user so our conclusions will always be around events.")
-    st.markdown("- Sports betting has a great variability in the amounts wagered. They depend on factors such as the sport, the specific event or the players themselves. In terms of events and sports, some are more popular than others, in general, but as far as players are concerned, there is no rule that marks the level of their bets.")
-    st.markdown("- The most popular sport and the one who provides a major profit is football.")
-    st.markdown("- Football competitions are the ones that generate the most money for the company, but they are also the ones in which users are paid the most money.")
-    st.markdown("- Even if footbal has a hold of 19.59% , this 19.59\% represents the 52,86\% of the total Hold. Bigger volume on football explains it.")
-    st.markdown("- As before shown with football, Prematch has a hold of 19,60\%, lower than the Hold from Live purchase, but, Prematch represents the 50,83\% of the total Hold. Prematch purchasing bigger volume explain it.")
-    st.markdown("- Win prediction will be more usefull if data was higher but selected model reflects real data related to trained data.")
-    st.markdown("- Other predictions as Wager by Sport Group or by Sport could be build as a firts step to help win prediction.")
+
+    st.markdown("- The **Most Popular Sport Group** and the one who provides a **Major Profit** is **Football**.")
+    
+    event_percentage = (mysportsbetting["Sport_Group"].value_counts(normalize=True) * 100).round(2)
+    fig = px.bar(x=event_percentage.index, y=event_percentage.values,color=event_percentage.index,
+                 color_discrete_map=color_map_sport_group,text=event_percentage.values,
+                title="Events Distribution by Sport Group",labels={"x": "Grupo Deportivo", "y": "Porcentaje de Eventos"},
+                height=450, text_auto=True)
+    fig.update_traces(texttemplate='%{text}%', textposition='outside')
+    fig.update_xaxes(title="Sport Group")
+    fig.update_yaxes(title="\% Events")
+    fig.update_legends(title="Sport Group")
+    st.plotly_chart(fig) 
+    
+    win_wager_sport = mysportsbetting.groupby("Sport_Group").agg({"Wager": "sum", "Winnings": "sum"}).reset_index()
+    fig = px.scatter(win_wager_sport, x="Sport_Group", y=["Wager", "Winnings"], title="Evolution of Wager and Winnings by Sport Group",
+                labels={"Sport_Group": "Sport Group", "value": "Amount", "variable": "Type"},width=1750,height=400)
+    st.plotly_chart(fig)
+    
+    st.markdown("- Even if **Footbal has a hold of 19.59%**, this 19.59\% **represents the 52,86\% of the Total Hold**. Bigger volume on football explains it.")
+    col1,col2=st.columns(2)
+    with col1:
+        hold_avg_by_sport_group = (mysportsbetting.groupby("Sport_Group")["Hold"].mean()).round(4)*100
+        fig=px.histogram(hold_avg_by_sport_group,x=hold_avg_by_sport_group.index,y=hold_avg_by_sport_group.values,title="Hold Average of each Sports Group",
+                        template="plotly_dark",color=hold_avg_by_sport_group.index,color_discrete_map=color_map_sport_group,text_auto=True)
+        fig.update_traces(texttemplate='%{y:.2f}%', textposition='outside')
+        fig.update_xaxes(title="Sport Group")
+        fig.update_yaxes(title="Hold")
+        st.plotly_chart(fig)  
+        
+    with col2:
+        total_hold = mysportsbetting["Hold"].sum()
+        hold_avg_by_sport_group_relative = (mysportsbetting.groupby("Sport_Group")["Hold"].sum() / total_hold).round(4)*100
+        fig = px.pie(hold_avg_by_sport_group_relative, values=hold_avg_by_sport_group_relative.values,
+             names=hold_avg_by_sport_group_relative.index,title="Average Hold from the total Hold by Sport Group",
+             hole=0.3, color=hold_avg_by_sport_group_relative.index,color_discrete_map=color_map_sport_group)
+        fig.update_traces(textinfo='percent+label')
+        st.plotly_chart(fig)  
+        
+    st.markdown("- As before shown with Football, **Prematch has a hold of 19,60\%**, lower than the Hold from Live purchase, but, Prematch **represents the 50,83\% of the Total Hold**. Prematch purchasing bigger volume explain it.")
+    col1,col2=st.columns(2)
+    with col1:
+        hold_avg_by_purchase_time = (mysportsbetting.groupby("Purchase_Time")["Hold"].mean()).round(4)*100
+        fig=px.histogram(hold_avg_by_purchase_time,x=hold_avg_by_purchase_time.index,y=hold_avg_by_purchase_time.values,title="Hold Average of each Purchase Time",
+                        color=hold_avg_by_purchase_time.index,color_discrete_map=color_map_purchase_time,text_auto=True)
+        fig.update_traces(texttemplate='%{y:.2f}%', textposition='outside')
+        fig.update_xaxes(title="Purchase Time")
+        fig.update_yaxes(title="Hold")                 
+        st.plotly_chart(fig)  
+    with col2:
+        hold_avg_by_purchase_time_relative = (mysportsbetting.groupby("Purchase_Time")["Hold"].sum() / total_hold).round(4)*100
+        fig = px.pie(hold_avg_by_purchase_time_relative, values=hold_avg_by_purchase_time_relative.values,
+                    color=hold_avg_by_purchase_time.index,color_discrete_map=color_map_purchase_time,
+                    names=hold_avg_by_purchase_time_relative.index, title="Average Hold of each Pruchase Time respect to the total Hold",hole=0.3)
+        fig.update_traces(textinfo='percent+label')
+        st.plotly_chart(fig)  
+    col1,col2=st.columns(2)
+    with col1:
+        st.markdown("- **Female events are minoritary** in Sports Betting Online, representing **4,7\%** ")
+        gender_percentage = (mysportsbetting["Gender_Competition"].value_counts(normalize=True) * 100).round(2)
+        fig = px.bar(x=gender_percentage.index, y=gender_percentage.values,
+                    color=gender_percentage.index,text=gender_percentage.values, title="Events by Gender",
+                    height=450, text_auto=True, color_discrete_map=color_map_gender)
+        fig.update_traces(texttemplate='%{text}%', textposition='outside')
+        fig.update_xaxes(title="Gender")
+        fig.update_yaxes(title="% Gender")
+        fig.update_legends(title="Gender")
+        st.plotly_chart(fig)
+    with col2:    
+        st.markdown("- **Saturdays** are the days that generate the **highest volume of wWger**, followed by Sundays.")
+        total_events = mysportsbetting.shape[0]
+        events_percentage = ((mysportsbetting["Day_of_Week_Name"].value_counts() / total_events) * 100).round(2)
+        events_percentage_df = events_percentage.reset_index()
+        events_percentage_df.columns = ["Day_of_Week_Name", "Percentage"]
+        ordered_weekday_names = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+        fig = px.bar(events_percentage_df, x="Day_of_Week_Name", y="Percentage",
+                    title="Events Distribution by Weekay",category_orders={"Day_of_Week_Name":ordered_weekday_names},
+                    color="Day_of_Week_Name", height=450)
+        fig.update_xaxes(title="Weekday")
+        fig.update_yaxes(title="Events %",tickvals=[0, 5, 10, 15, 20])
+        fig.update_legends(title="Weekday")
+        fig.update_traces(texttemplate='%{y:.2f}%', hovertemplate='%{y:.2f}%')
+        st.plotly_chart(fig)
+    st.markdown("- **LaLiga** is the Competition that generates the most revenue & **FA CUP** is the one that generates the most losses for the company.")
+    st.markdown("- **Football** is both the Sport that **generates** the **most profits & the most losses**.")
+    st.markdown("- **American Football** is the **Sport** with the **highest losses**.")
+    st.image("Images/top competitions.png")
