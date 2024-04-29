@@ -199,8 +199,8 @@ with tab2:
     #               values="count", title="Data hierarchy", color="Sport_Group", 
     #               color_discrete_map=color_map_sport_group, width=1750,height=600)
     # st.plotly_chart(fig)
-    hierarchy="Images\data_hierarchy.png"
-    st.image(hierarchy)
+    hierarchy="Images/data_hierarchy.png"
+    st.image(hierarchy,width=1750)
     
     
     col1,col2=st.columns(2)
