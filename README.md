@@ -98,13 +98,8 @@ This is a multi-tab application where you can browse through different informati
       - `Label encode` was used to codify object variables and to observe the possible correlations between numerical and object variables. 
     - Outliers
       - Were calculated using `IQR` and the number extracted was very high.
-      - Outliers were summed per line based on the numeral variables identified as outliers and, were all 4 numerical variables were identified as outlier, were removed. In this case, 4.71% of the entries were removed.    
-
-<p align="center">
-  <img src="Images\image.png">
-</p>   
-
-
+      - Outliers were summed per line based on the numeral variables identified as outliers and, were all 4 numerical variables were identified as outlier, were removed. In this case, 4.71% of the entries were removed.   
+      <p align="center"> <img src="Images\image.png"></p>    
     - Normalisation 
       - Before removing Outliers, normalisation was applied with `RobustScaler`.
       - Data do not follow a Gaussioan distribution and has a high number of outliers, reasons why "Z-Score", "Min-Max" were discard. Box-Cox was also discard as the robustness of the data is more important in this case than to fit to a normal distribution. 
