@@ -102,7 +102,7 @@ This is a multi-tab application where you can browse through different informati
       <p align="center"> <img src="Images\image.png"></p>    
     - Normalisation 
       - Before removing Outliers, normalisation was applied with `RobustScaler`.
-      - Data do not follow a Gaussioan distribution and has a high number of outliers, reasons why "Z-Score", "Min-Max" were discard. Box-Cox was also discard as the robustness of the data is more important in this case than to fit to a normal distribution. 
+      - Data do not follow a Gaussian distribution and has a high number of outliers, reasons why "Z-Score", "Min-Max" were discard. Box-Cox was also discard as the robustness of the data is more important in this case than to fit to a normal distribution. 
 
   - Regression Model:     
     - Different models have been trained: `Support Vector Regression(SVR)`, `Ridge Regression`, `Lasso Regression`, `ElasticNet Regression`, `Random Forest Regression`, `Gradient Boosting Regression` and `Polynomial Regression`.   
