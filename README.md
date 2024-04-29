@@ -4,7 +4,7 @@
   <img src="Images\soccer-9133_256.gif">
 </p>
 
- This is a project related to Online Sports Betting in Spain where the aim is to obtain a model that predicts the sports group that brings the most profit to a company given a sample data set. 
+ This is a project related to Online Sports Betting in Spain where the aim is to obtain a model that predicts the sports group that brings the most profit to a company given a sample data set. In this case, a 90 days dataset. 
 
 ## **Table of Contents**
 
@@ -137,8 +137,10 @@ This is a multi-tab application where you can browse through different informati
   - Sports betting has a great variability in the amounts wagered. They depend on factors such as the sport, the specific event or the players themselves. In terms of events and sports, some are more popular than others, in general, but as far as players are concerned, there is no rule that marks the level of their bets.
   - The most popular sport and the one who provides a major profit is football.
   - Football competitions are the ones that generate the most money for the company, but they are also the ones in which users are paid the most money. 
-  - Even if footbal has a hold of 19.59% , when comparing with other Sport Groups and the total Hold, still represents the 52,86% of the total Hold. Bigger volume on football explains this. 
-  - As before shown with football, Prematch has a hold of 19,60%, lower than the Hold from Live purchase, but, Prematch represents the 50,83% of the total Hold. This is due to a bigger volume on Prematch purchasing.
+  - Even if footbal has a hold of 19.59% , this 19.59% represents the 52,86% of the total Hold. Bigger volume on football explains it. 
+  - As before shown with football, Prematch has a hold of 19,60%, lower than the Hold from Live purchase, but, Prematch represents the 50,83% of the total Hold. Prematch purchasing bigger volume explain it. 
+  - Win prediction will be more usefull if data was higher but model chosed reflects real data related to trained data.
+  - Other predictions as Wager by Sport Group or by Sport could be build as a firts step to help win prediction. 
 
 ### **Contributing**
 
