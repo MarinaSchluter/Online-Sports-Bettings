@@ -62,7 +62,7 @@ st.title("Online Sports Betting")
 # st.sidebar.write("-------------")
 
 #-----TABS------#
-tab1, tab2, tab3, tab4, tab5,tab6 = st.tabs(["Online Sport Betting Houses in Spain","Events Distribution","Wager vs Win","Hold","PowerBI","Prediction"])
+tab1, tab2, tab3, tab4, tab5,tab6 = st.tabs(["Online Sports Betting Houses in Spain","Events Distribution","Wager vs Win","Hold","PowerBI","Prediction"])
 
 #-----TAB 1 (CONTEXT)------#
 
