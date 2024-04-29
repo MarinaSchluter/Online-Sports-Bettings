@@ -23,7 +23,7 @@ A Streamlit application has been created to show some of the results obtained du
 This is a multi-tab application where you can browse through different information on each tab.     
   - Tabs & Content:     
 
-    - Context: This tab provides an overview of the number of Online Sportbetting houses in Spain and their ratings. It has a filter to display them according to the rating of the public.       
+    - Online Sport Betting Houses in Spain: This tab provides an overview of the number of Online Sportbetting houses in Spain and their ratings. It has a filter to display them according to the rating of the public.       
     - Events Distribution: This tab shows the number of events (competitions) on which bets have been placed during the period recorded in the dataset used in the project.     
     - Wager vs Win: Overview and comparison of the amount bet by the players and the amount earned by the company. By using filters, some more concrete data can be displayed.     
     - Hold: Overview about Hold distribution by Sport Group and Purchase Time. 
