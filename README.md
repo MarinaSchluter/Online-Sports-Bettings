@@ -98,7 +98,7 @@ This is a multi-tab application where you can browse through different informati
       - `Label encode` was used to codify object variables and to observe the possible correlations between numerical and object variables. 
     - Outliers
       - Were calculated using `IQR` and the number extracted was very high.
-      - Outliers were summed per line based on the numeral variables identified as outliers and, were all 4 numerical variables were identified as outlier, were removed. In this case, 4.71% of the entries were removed.   
+      - Outliers were summed per line based on the numeral variables identified as outliers and, where all 4 numerical variables were identified as outlier, were removed. In this case, 4.71% of the entries were removed.   
       <p align="center"> <img src="Images\image.png"></p>    
     - Normalisation 
       - Before removing Outliers, normalisation was applied with `RobustScaler`.
